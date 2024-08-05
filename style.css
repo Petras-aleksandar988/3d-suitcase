@@ -39,14 +39,18 @@ body {
 }
 .upper-btns .configurator {
   border-radius: 8px 0 0 8px;
+  width: 300px;
 }
 .upper-btns .animations {
   border-radius: 0 8px 8px 0;
+  width: 300px;
 }
 .configurator {
   padding-left: 40px;
 }
-
+.configurator-btn, .animations-btn{
+  padding: 0 25px;
+}
 .animations {
   padding-right: 40px;
 }
@@ -91,7 +95,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: -55px;
+  margin-top: -85px;
   z-index: 1;
 }
 
@@ -298,6 +302,15 @@ bottom: 9px;
   .configurator {
     padding-left: 15px;
   }
+  .upper-btns .configurator {
+    width: 175px;
+  }
+  .upper-btns .animations {
+    width: 175px;
+  }
+  .configurator-btn, .animations-btn{
+    padding: 0 ;
+  }
   .first-2-inputs,
   .second-2-inputs {
     flex-direction: column;
@@ -411,4 +424,14 @@ bottom: 9px;
   .lower-btns label {
     width: 115px;
   }
+  .upper-btns button{
+    font-size: 18px;
+  }
+  .upper-btns .configurator{
+    width: 155px;
+  }
+  .upper-btns .animations{
+    width: 155px;
+  }
+ 
 }
