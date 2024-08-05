@@ -346,7 +346,9 @@ bottom: 9px;
     width: 85%;
     max-width: 390px;
   }
-
+  .select-color{
+    height: 30px;
+  }
   .color-options-container {
     position: relative;
   }
