@@ -79,7 +79,7 @@ function applyMarginBasedOnChangeMobile() {
 
   if (isMobile) {
     if (isCheckedRadio) {
-        $("#container3d").css("margin-top", "-110px");
+        $("#container3d").css("margin-top", "-30%");
         $(".lower-btns").css({ "display": "none" });
 
     } else {
