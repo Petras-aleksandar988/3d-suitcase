@@ -4,6 +4,8 @@ var options = {
   projectName: "resources-for-videos-and-marketing-purposes",
   solution3DID: "62766",
   containerID: "container3d",
+  enableTouch: true,
+
 
   onPointerClick: function (objectsClick) {
     if (objectsClick.length > 0) {
@@ -77,7 +79,7 @@ function applyMarginBasedOnChangeMobile() {
 
   if (isMobile) {
     if (isCheckedRadio) {
-        $("#container3d").css("height", "80vh");
+        $("#container3d").css("margin-top", "-110px");
         $(".lower-btns").css({ "display": "none" });
 
     } else {
@@ -85,7 +87,7 @@ function applyMarginBasedOnChangeMobile() {
       $("#container3d").css("height", "100vh");
     }
   } else {
-    $("#container3d").css({"height": "100vh"});
+    $("#container3d").css({ "margin-top": "0"});
     $(".lower-btns").css("display", "flex");
   }
   if (!isCheckedRadio) {
@@ -100,6 +102,8 @@ function applyMarginBasedOnChangeMobile() {
       width: "100%",
       height: "100vh",
     });
+    $("#container3d").css({ "margin-top": "0"});
+
     $('.lower-btns input[type="radio"]:checked').prop("checked", false);
     Unlimited3D.showAnnotations({
       annotationObjects: [
@@ -115,7 +119,6 @@ function applyMarginBasedOnChangeMobile() {
 ],
     });
 
-    $("#container3d").css({ "margin-top": "0", width: "100%" });
 
   }
 }
@@ -353,7 +356,7 @@ function retractHandle() {
 
 function closeColorPicker() {
     $('#color-picker').css("display", "none");
-    $("#container3d").css("margin-right", "0");
+    $("#container3d").css({"margin-right":"0" , "margin-top":"0" });
     $('.lower-btns input[type="radio"]:checked').prop("checked", false);
     $(".upper-btns").css("display", "flex");
     $(".lower-btns").css("display", "flex");

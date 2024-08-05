@@ -84,6 +84,7 @@ body {
   height: 100vh;
   transition: margin-right 1s ease;
   transition: height 1s ease;
+  transition: margin-top 1s ease;
 }
 .lower-btns {
   display: flex;
@@ -301,7 +302,7 @@ body {
     row-gap: 15px;
   }
   .lower-btns {
-    margin-top: -155px;
+    margin-top: -165px;
     display: flex;
   }
   .lower-btns input[type="radio"] + label::before {
@@ -319,10 +320,10 @@ body {
     bottom: 0;
     top: unset;
     width: 100% !important;
-    height: 333px;
+    height: 320px;
     transition: height 0.5s ease;
     transition: right 0.5s ease;
-    padding: 12px 12px 30px;
+    padding: 12px 12px 16px;
     border-radius: 0;
   }
   .title-x {
