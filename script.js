@@ -43,7 +43,18 @@ let configuration = {
   camera: $(window).width() < 880 ? "Camera Mobile" : "Camera Desktop",
 };
 
-Unlimited3D.init(options, configuration);
+Unlimited3D.init(options, configuration,function(error, status){
+
+  const loadingOverlay = document.getElementById('loading-overlay');
+  if (!status) {
+    loadingOverlay.style.display = 'flex';
+    
+  }
+  else {
+    loadingOverlay.style.display = 'none';
+  }
+}
+);
 
 
 function activateCameraBasedOnWidth() {
@@ -425,7 +436,7 @@ clearColorOptionEventListeners()
     const colorOptions = document.querySelectorAll('.color-option');
     colorOptions.forEach(option => {
         document.querySelector('.color-chosen').textContent = $('.color-option.selected').data('name');
-        option.style.display = 'block';
+        option.style.display = 'flex';
         if (selectedBodyColor !== '') {
            
             if (option.dataset.color === selectedBodyColor) {
@@ -443,15 +454,15 @@ clearColorOptionEventListeners()
     Unlimited3D.changeMaterials({ partObjects: [ {parts: ['Body_metal_base', 'Body_metal_cover','Corners_base','Corners_cover','Handle_base1','Handle_metal-1','Handle_telescope-1','Wheels_base','Wheels_base_cover','Wheels_front_right_base','Wheels_front_left_base','Wheels_back_right_base','Wheels_back_left_base','Wheels_front_right_center','Wheels_front_left_center','Wheels_back_right_center','Wheels_back_left_centar'], material: '06 CHROME SATIN ALUMINUM'} ] });
         
 }
-if (selectedBodyColor == '' && (selectedCornerColor !== '' || selectedHandleColor !== '' || selectedWheelsColor !== '')) {
-    option.classList.remove('selected');
-    colorOptions[0].classList.add('selected');
-    Unlimited3D.changeMaterials({
-                partObjects: [
-                    { parts: ['Body_metal_base', 'Body_metal_cover' ], material: '06 CHROME SATIN ALUMINUM' }
-                ]
-            });
-}
+// if (selectedBodyColor == '' && (selectedCornerColor !== '' || selectedHandleColor !== '' || selectedWheelsColor !== '')) {
+//     option.classList.remove('selected');
+//     colorOptions[0].classList.add('selected');
+//     Unlimited3D.changeMaterials({
+//                 partObjects: [
+//                     { parts: ['Body_metal_base', 'Body_metal_cover' ], material: '06 CHROME SATIN ALUMINUM' }
+//                 ]
+//             });
+// }
 
 
         option.addEventListener('click', function() {
